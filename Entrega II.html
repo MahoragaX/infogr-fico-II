@@ -31,154 +31,129 @@
         .flow-step {
             display: flex;
             align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .flow-step .icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            min-height: 120px;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        .flow-step .text {
+            flex-grow: 1;
         }
         .flow-arrow {
-            font-size: 2.5rem;
-            line-height: 1;
-            color: #ff6361;
-            align-self: center;
+            width: 2px;
+            height: 30px;
+            margin-left: 24px;
         }
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- PALETTE: Energetic & Playful -->
-    <!-- NARRATIVE PLAN: 
-        1. Header: Catchy title and intro.
-        2. Hard Skills: Bar chart showing most demanded tech skills.
-        3. Soft Skills: Radar chart for behavioral skills.
-        4. Salary: Big number cards for salary ranges.
-        5. Trends: Icon-based cards for market trends.
-        6. Action Plan: HTML/CSS flowchart for personal development.
-    -->
-    <!-- VISUALIZATION CHOICES:
-        - Hard Skills -> Compare -> Bar Chart (Chart.js/Canvas) -> Justification: Best for comparing frequency of discrete categories. NO SVG.
-        - Soft Skills -> Compare -> Radar Chart (Chart.js/Canvas) -> Justification: Shows multivariate data and balance between skills. NO SVG.
-        - Salary -> Inform -> Big Number Cards (HTML/CSS) -> Justification: Direct and impactful for simple data ranges. NO SVG.
-        - Trends -> Organize -> Icon Cards (HTML/CSS + Unicode) -> Justification: Visually engaging for qualitative info. NO SVG.
-        - Action Plan -> Organize/Process -> Flowchart (HTML/CSS) -> Justification: Clearly shows a step-by-step plan. NO SVG, NO MERMAID JS.
-    -->
-
-    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+    <div class="container mx-auto p-4 md:p-8">
 
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-black text-[#003f5c] mb-2">DECODIFICANDO O MERCADO</h1>
-            <p class="text-lg md:text-2xl text-[#58508d]">O Guia do Analista de Dados no Brasil para 2025</p>
-            <p class="mt-4 max-w-3xl mx-auto text-gray-600">
-                Uma análise baseada em vagas reais para revelar as competências, salários e tendências que definem a carreira de Análise de Dados e IA no país.
-            </p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#003f5c] mb-2">O Perfil do Analista de Dados no Brasil</h1>
+            <p class="text-lg text-[#58508d]">Uma análise baseada em vagas de emprego em 2025</p>
         </header>
 
         <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-[#003f5c] mb-4 text-center">As Ferramentas Essenciais (Hard Skills)</h2>
-                <p class="text-center text-gray-600 mb-6">Frequência das habilidades técnicas mais exigidas nas vagas de Analista de Dados Júnior e Pleno.</p>
-                <div class="chart-container h-96 md:h-[450px]">
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center justify-around text-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-5xl font-bold text-[#003f5c]">80%</p>
+                    <p class="text-md text-gray-600">Das vagas exigem SQL como competência chave</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <p class="text-5xl font-bold text-[#bc5090]">100%</p>
+                    <p class="text-md text-gray-600">Das vagas pedem Raciocínio Analítico e Comunicação</p>
+                </div>
+                <div>
+                    <p class="text-5xl font-bold text-[#ffa600]">60%</p>
+                    <p class="text-md text-gray-600">Das vagas são para trabalho remoto</p>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4 text-[#003f5c]">As Hard Skills Mais Desejadas</h2>
+                <p class="text-gray-600 mb-6">SQL e Excel dominam como ferramentas fundamentais, enquanto o conhecimento em plataformas de BI é um diferencial competitivo claro.</p>
+                <div class="chart-container">
                     <canvas id="hardSkillsChart"></canvas>
                 </div>
-            </section>
+            </div>
 
-            <section class="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
-                <h2 class="text-2xl font-bold text-[#003f5c] mb-4 text-center">O Perfil Comportamental (Soft Skills)</h2>
-                 <p class="text-center text-gray-600 mb-6">Além da técnica, estas são as competências comportamentais que as empresas mais buscam.</p>
-                <div class="chart-container h-96 md:h-[450px]">
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col">
+                <h2 class="text-2xl font-bold mb-4 text-[#003f5c]">Faixa Salarial e Modalidade</h2>
+                 <p class="text-gray-600 mb-6">Com base nas vagas que divulgaram remuneração, a faixa para níveis de entrada é ampla, refletindo diferentes responsabilidades.</p>
+                <div class="flex-grow flex flex-col justify-center text-center">
+                    <p class="text-lg text-gray-700">Faixa Salarial Encontrada:</p>
+                    <p class="text-4xl font-bold text-[#58508d] my-2">R$ 3.000 a R$ 6.000</p>
+                    <p class="text-sm text-gray-500 mb-8">(Média de ~R$ 4.250 entre os valores informados)</p>
+
+                    <p class="text-lg text-gray-700">Modalidade de Trabalho</p>
+                    <div class="w-full bg-gray-200 rounded-full h-6 mt-2 overflow-hidden flex">
+                        <div class="bg-[#ffa600] h-6 flex items-center justify-center text-white text-sm font-bold" style="width: 60%">Remoto</div>
+                        <div class="bg-[#ff6361] h-6 flex items-center justify-center text-white text-sm font-bold" style="width: 20%">Híbrido</div>
+                        <div class="bg-gray-400 h-6 flex items-center justify-center text-white text-sm font-bold" style="width: 20%">Presencial</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4 text-[#003f5c]">As Soft Skills Essenciais</h2>
+                <p class="text-gray-600 mb-6">Habilidades de comunicação e análise são universais. Ser capaz de traduzir dados em insights e colaborar com a equipe é crucial.</p>
+                <div class="chart-container">
                     <canvas id="softSkillsChart"></canvas>
                 </div>
-            </section>
+            </div>
 
-            <section class="lg:col-span-1 flex flex-col justify-center space-y-8">
-                 <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                    <h3 class="text-xl font-bold text-[#003f5c]">Salário Analista Júnior</h3>
-                    <p class="text-4xl font-black text-[#ff6361] mt-2">R$ 3.500</p>
-                    <p class="text-xl font-bold text-[#58508d]">a</p>
-                    <p class="text-4xl font-black text-[#ff6361] ">R$ 5.500</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                    <h3 class="text-xl font-bold text-[#003f5c]">Salário Analista Pleno</h3>
-                    <p class="text-4xl font-black text-[#ffa600] mt-2">R$ 6.000</p>
-                    <p class="text-xl font-bold text-[#58508d]">a</p>
-                    <p class="text-4xl font-black text-[#ffa600]">R$ 9.000</p>
-                </div>
-            </section>
-
-            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6 mt-8">
-                <h2 class="text-2xl font-bold text-[#003f5c] mb-6 text-center">As Grandes Tendências do Setor</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="text-6xl mb-4">🐍</div>
-                        <h3 class="text-xl font-bold text-[#bc5090]">Da Ferramenta à Programação</h3>
-                        <p class="text-gray-600 mt-2">Dominar Power BI é essencial, mas o mercado avança para Python, exigindo automação e análises preditivas mais complexas.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="text-6xl mb-4">☁️</div>
-                        <h3 class="text-xl font-bold text-[#ff6361]">Dados na Nuvem</h3>
-                        <p class="text-gray-600 mt-2">Familiaridade com ambientes como AWS e Azure é um diferencial crucial. As empresas estão migrando suas infraestruturas para a nuvem.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <div class="text-6xl mb-4">🗣️</div>
-                        <h3 class="text-xl font-bold text-[#ffa600]">O Analista Comunicador</h3>
-                        <p class="text-gray-600 mt-2">A habilidade de transformar dados em histórias e recomendações claras (storytelling) é tão valiosa quanto a própria análise técnica.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6 mt-8">
-                <h2 class="text-2xl font-bold text-[#003f5c] mb-6 text-center">Plano de Ação Pessoal (Próximos 6 Meses)</h2>
-                <div class="flex flex-col md:flex-row items-stretch justify-center gap-4">
-                    <div class="flex-1 flow-step bg-[#003f5c] text-white">
-                        <div>
-                            <h3 class="font-bold text-lg">Habilidade 1: Python</h3>
-                            <p class="text-sm">Focar em cursos de Python para Data Science (Alura, DIO) e automatizar um relatório de telemetria no trabalho.</p>
+            <div class="md:col-span-2 lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                 <h2 class="text-2xl font-bold mb-4 text-[#003f5c]">Seu Plano de Carreira em 6 Meses</h2>
+                 <p class="text-gray-600 mb-6">Com base na análise, este é um caminho estratégico para se destacar como Analista de Dados no mercado atual.</p>
+                <div>
+                    <div class="flow-step">
+                        <div class="icon bg-[#003f5c] text-white">1</div>
+                        <div class="text">
+                            <h3 class="font-bold">Dominar SQL (Habilidade Técnica)</h3>
+                            <p class="text-sm text-gray-600">Aprofunde-se na linguagem mais pedida. Foque em JOINs, Window Functions e otimização de queries para se diferenciar.</p>
                         </div>
                     </div>
-                    <div class="flow-arrow transform md:rotate-0 rotate-90">➡️</div>
-                    <div class="flex-1 flow-step bg-[#bc5090] text-white">
-                        <div>
-                            <h3 class="font-bold text-lg">Habilidade 2: SQL Avançado</h3>
-                            <p class="text-sm">Aprofundar o conhecimento para extrair e manipular dados diretamente do banco, ganhando autonomia e profundidade nas análises.</p>
+                    <div class="flow-arrow bg-gray-300"></div>
+                     <div class="flow-step">
+                        <div class="icon bg-[#58508d] text-white">2</div>
+                        <div class="text">
+                            <h3 class="font-bold">Aprender Power BI (Habilidade Técnica)</h3>
+                            <p class="text-sm text-gray-600">Escolha a ferramenta de BI líder de mercado. Crie dashboards interativos para seu portfólio usando dados públicos.</p>
                         </div>
                     </div>
-                    <div class="flow-arrow transform md:rotate-0 rotate-90">➡️</div>
-                    <div class="flex-1 flow-step bg-[#ffa600] text-white">
-                        <div>
-                            <h3 class="font-bold text-lg">Habilidade 3: Storytelling com Dados</h3>
-                            <p class="text-sm">Estudar e aplicar técnicas de visualização e narrativa para apresentar dashboards e relatórios de forma mais impactante.</p>
+                     <div class="flow-arrow bg-gray-300"></div>
+                    <div class="flow-step">
+                        <div class="icon bg-[#bc5090] text-white">3</div>
+                        <div class="text">
+                            <h3 class="font-bold">Desenvolver Comunicação (Habilidade Comportamental)</h3>
+                            <p class="text-sm text-gray-600">Aprenda a "contar histórias com dados". Pratique apresentar seus achados de forma clara e impactante para diferentes públicos.</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
         </main>
 
-        <footer class="text-center mt-12 text-gray-500">
-            <p>Relatório de Análise de Mercado e Plano de Desenvolvimento de Carreira por Yago Medina.</p>
-            <p>Disciplina: Design Profissional - Agosto de 2025.</p>
+        <footer class="text-center mt-12 text-gray-500 text-sm">
+            <p>Análise realizada como parte da disciplina Experiência Prática II - Análise e Desenvolvimento de Sistemas.</p>
+            <p>Fonte dos Dados: 5 vagas de Analista de Dados publicadas no LinkedIn em Agosto de 2025.</p>
         </footer>
 
     </div>
 
     <script>
-        function wrapLabels(label, maxWidth) {
-            const words = label.split(' ');
-            let lines = [];
-            let currentLine = '';
-            words.forEach(word => {
-                if ((currentLine + word).length > maxWidth) {
-                    lines.push(currentLine.trim());
-                    currentLine = '';
-                }
-                currentLine += word + ' ';
-            });
-            lines.push(currentLine.trim());
-            return lines.filter(line => line.length > 0);
-        }
-
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -187,15 +162,38 @@
             }
             return label;
         };
+        
+        const tooltipConfig = {
+            callbacks: {
+                title: tooltipTitleCallback
+            }
+        };
+
+        const wrapLabels = (label, maxLength) => {
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) lines.push(currentLine.trim());
+            return lines;
+        };
 
         const hardSkillsData = {
-            labels: ['SQL', 'Power BI ou Tableau', 'Excel Avançado', ['Python (Júnior/', 'Pleno)'], ['Noções de Cloud', '(AWS, Azure)']].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
+            labels: ['SQL', 'Excel / Sheets', ['Ferramentas de BI', '(Power BI, etc.)'], 'Python'].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
             datasets: [{
                 label: 'Frequência nas Vagas (%)',
-                data: [100, 86, 86, 71, 43],
+                data: [80, 80, 60, 40],
                 backgroundColor: ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'],
-                borderColor: 'rgba(255, 255, 255, 0.8)',
-                borderWidth: 1
+                borderColor: '#ffffff',
+                borderWidth: 2
             }]
         };
 
@@ -204,45 +202,25 @@
             type: 'bar',
             data: hardSkillsData,
             options: {
+                indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
-                indexAxis: 'y',
                 scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%'
-                            }
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            font: {
-                                size: 12
-                            }
-                        }
-                    }
+                    x: { suggestedMax: 100, grid: { display: false } },
+                    y: { grid: { display: false } }
                 },
                 plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
+                    legend: { display: false },
+                    tooltip: tooltipConfig
                 }
             }
         });
 
         const softSkillsData = {
-            labels: ['Comunicação Clara', 'Resolução de Problemas', ['Pensamento Analítico', 'e Crítico'], ['Trabalho em Equipe e', 'Colaboração'], ['Proatividade e', 'Curiosidade']].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
+            labels: ['Comunicação', ['Raciocínio', 'Analítico'], ['Trabalho em', 'Equipe'], ['Atenção aos', 'Detalhes'], ['Vontade de', 'Aprender']].map(l => Array.isArray(l) ? l : wrapLabels(l, 16)),
             datasets: [{
-                label: 'Importância Percebida',
-                data: [95, 90, 88, 85, 80],
+                label: 'Frequência nas Vagas (%)',
+                data: [100, 100, 60, 60, 40],
                 backgroundColor: 'rgba(255, 99, 97, 0.2)',
                 borderColor: '#ff6361',
                 pointBackgroundColor: '#ff6361',
@@ -262,31 +240,19 @@
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        angleLines: {
-                            display: true
-                        },
+                        angleLines: { display: true },
                         suggestedMin: 0,
                         suggestedMax: 100,
-                        pointLabels: {
-                            font: {
-                                size: 12
-                            }
-                        }
+                        pointLabels: { font: { size: 12 } },
+                        ticks: { backdropColor: 'rgba(255, 255, 255, 0.75)' }
                     }
                 },
                 plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
+                    legend: { display: false },
+                    tooltip: tooltipConfig
                 }
             }
         });
     </script>
-
 </body>
 </html>
