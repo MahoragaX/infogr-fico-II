@@ -35,10 +35,11 @@ Todo o código está contido em um único arquivo index.html, tornando o projeto
 Para visualizar o infográfico, você pode:
 
 Acessar a página via GitHub Pages:
+
 Visualizar localmente:
 
 Faça o download ou clone este repositório.
 
-Abra o arquivo index.html (ou o nome que você deu ao arquivo HTML) em qualquer navegador de internet moderno (Google Chrome, Firefox, Edge, etc.).
+Abra o arquivo Entrega II em qualquer navegador de internet moderno (Google Chrome, Firefox, Edge, etc.).
 
-Este projeto foi desenvolvido por [Seu Nome] como requisito acadêmico para a Cruzeiro do Sul Virtual.
+Este projeto foi desenvolvido por Yago Medina, como requisito acadêmico para a Cruzeiro do Sul Virtual.
