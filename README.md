@@ -1,2 +1,2 @@
-# infogr-fico-II
+# infografico-II
 Infográfico para a entrega II
